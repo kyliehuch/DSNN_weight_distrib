@@ -17,6 +17,11 @@ for i in range(2):
 print("number weights, c1n0:", len(c1n0_wts))
 print(c1n0_wts)
 
+arr = np.array(c1n0_wts)
+a = np.hstack((arr.normal(size=50), arr.normal(loc=5, scale=1, size=50)))
+plt.hist(a, bins=10, range=(0.0, 1.0))
+plt.title("Histogram of single c1 neuron's weight distribution")
+plt.show()
 
 
 
