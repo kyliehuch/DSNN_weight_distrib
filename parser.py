@@ -18,9 +18,11 @@ for k in range(32):
     conv1_weights.append(cur_weights)
 
 
-print("number weights:", len(conv1_weights[0]))
+print("number weights, c1[0]:", len(conv1_weights[0]))
 print(conv1_weights[0])
 
+print("number weights, c1[1]:", len(conv1_weights[1]))
+print(conv1_weights[1])
 
 '''
 c1_n0_weights = []
