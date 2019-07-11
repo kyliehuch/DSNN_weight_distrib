@@ -18,7 +18,6 @@ for k in range(32):
                 cur_weights.append(weight.item())
     conv1_weights.append(cur_weights)
 
-<<<<<<< HEAD
 conv2_weights = []
 for k in range(150):
     cur_weights = []
@@ -27,18 +26,11 @@ for k in range(150):
             for weight in state_dict["conv1.weight"][k,i,j,:]:
                 cur_weights.append(weight.item())
     conv2_weights.append(cur_weights)
-=======
+
 
 print("number weights, c1[0]:", len(conv1_weights[0]))
 print(conv1_weights[0])
->>>>>>> 33d22116ab3294a3d1df27cdafc942cc1cbecc4f
 
 print("number weights, c1[1]:", len(conv1_weights[1]))
-print(conv1_weights[1])
-
-print("number weights c1[0]:", len(conv1_weights[0]))
-print(conv1_weights[0])
-
-print("number weights c1[1]:", len(conv1_weights[1]))
 print(conv1_weights[1])
 '''
