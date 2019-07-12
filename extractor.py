@@ -18,12 +18,12 @@ for k in range(32):
                 cur_weights.append(weight.item())
     f.write("c1n{}_wts = {}\n".format(k, cur_weights))
 
-f.write("\nconv1 weights:\n")
+f.write("\nconv2 weights:\n")
 for x in range(150):
     cur_weights = []
     for y in range(32):
         for z in range(2):
-            for weight in state_dict["conv1.weight"][x,y,z,:]:
+            for weight in state_dict["conv2.weight"][x,y,z,:]:
                 cur_weights.append(weight.item())
     f.write("c2n{}_wts = {}\n".format(k, cur_weights))
 
