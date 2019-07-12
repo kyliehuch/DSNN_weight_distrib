@@ -35,7 +35,7 @@ while (flag == True):
 
 
 (n, bins, patches) = plt.hist(wts, bins=20, range=(0.00, 1.00))
-print("threshold/num_inputs = {}".format(thr/num_inps))
+print("num_inputs/threshold = {}".format(num_inps/thr))
 print("number of weights close to 1 = {}".format(n[19]))
 plt.title("Histogram of c{}n{} neuron's weight distribution".format(LAYER, NRN_INDX))
 plt.xlabel('weight')
