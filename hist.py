@@ -3,7 +3,7 @@ import os
 import torch
 import numpy as np
 import matplotlib
-matplotlib.use('GTK3Agg')
+matplotlib.use('MacOSX')
 import matplotlib.pyplot as plt
 
 state_dict = torch.load("saved_l2.net")
