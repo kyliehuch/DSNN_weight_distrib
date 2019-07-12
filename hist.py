@@ -39,7 +39,7 @@ sparsity = n[19] / num_wts
 exp_spars = thr / num_wts
 print("sparsity = {}".format(sparsity))
 print("expected sparsity = {}".format(exp_spars))
-plt.title("Histogram of c{}n{} neuron's weight distribution\nsparsity = {}\tthr/num weights = {}".format(LAYER, NRN_INDX, sparsity, exp_spars))
+plt.title("Histogram of c{}n{} neuron's weight distribution\nsparsity = {}   thr/num weights = {}".format(LAYER, NRN_INDX, sparsity, exp_spars))
 plt.xlabel('weight')
 plt.ylabel('number weights')
 plt.show()
