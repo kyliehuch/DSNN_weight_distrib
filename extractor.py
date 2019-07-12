@@ -1,3 +1,4 @@
+# Code to extract weights from trained .net file and write them to .txt file
 import torch
 import os
 
