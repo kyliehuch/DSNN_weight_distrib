@@ -19,7 +19,7 @@ while (flag == True):
             for j in range(5):
                 for wt in state_dict["conv1.weight"][NRN_INDX,i,j,:]:
                     wts.append(wt.item())
-        num_inps = 50
+        num_wts = 50
         thr = 10
         flag = False
     elif (LAYER == 2):
@@ -27,7 +27,7 @@ while (flag == True):
             for j in range(2):
                 for wt in state_dict["conv2.weight"][NRN_INDX,i,j,:]:
                     wts.append(wt.item())
-        num_inps = 128
+        num_wts = 128
         thr = 1
         flag = False
     else:
@@ -35,9 +35,11 @@ while (flag == True):
 
 
 (n, bins, patches) = plt.hist(wts, bins=20, range=(0.00, 1.00))
-print("num_inputs/threshold = {}".format(num_inps/thr))
-print("number of weights close to 1 = {}".format(n[19]))
-plt.title("Histogram of c{}n{} neuron's weight distribution".format(LAYER, NRN_INDX))
+sparsity = n[19] / num_wts
+exp_spars = thr / num_wts
+print("sparsity = {}".format(sparsity))
+print("expected sparsity = {}".format(exp_spars))
+plt.title("Histogram of c{}n{} neuron's weight distribution\nsparsity = {}\tthr/num weights = {}".format(LAYER, NRN_INDX, sparsity, exp_spars))
 plt.xlabel('weight')
 plt.ylabel('number weights')
 plt.show()
