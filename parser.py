@@ -1,3 +1,4 @@
+# Code to read out weights from saved .net file
 import os
 import torch
 
