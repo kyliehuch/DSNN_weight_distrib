@@ -6,20 +6,32 @@ import matplotlib
 matplotlib.use('TkAgg')
 import matplotlib.pyplot as plt
 
+LAYER = input("Enter layer index: ")
+NRN_INDX = input("Enter neuron index: ")
+
 state_dict = torch.load("saved_l2.net")
-for param_tensor in state_dict:
-    if "stdp" not in param_tensor:
-        print(param_tensor, "\t", state_dict[param_tensor].size())
+wts = []
+flag = True
 
-c1n0_wts = []
-for i in range(2):
-    for j in range(5):
-        for wt in state_dict["conv1.weight"][8,i,j,:]:
-            c1n0_wts.append(wt.item())
+while flag == True:
+    if LAYER == 1:
+        for i in range(2):
+            for j in range(5):
+                for wt in state_dict["conv1.weight"][NRN_INDX,i,j,:]:
+                    wts.append(wt.item())
+        flag = False
+    elif LAYER == 2:
+        for i in range(32):
+            for j in range(2):
+                for wt in state_dict["conv2.weight"][NRN_INDX,i,j,:]:
+                    wts.append(wt.item())
+        flag = False
+    else:
+        print("Please enter layer index of 1 or 2")
 
 
-plt.hist(c1n0_wts, bins=20, range=(0.00, 1.00))
-plt.title("Histogram of single c1 neuron's weight distribution")
+plt.hist(wts, bins=20, range=(0.00, 1.00))
+plt.title("Histogram of c{}n{} neuron's weight distribution".format(LAYER, NRN_INDX))
 plt.xlabel('weight')
 plt.ylabel('number weights')
 plt.show()
