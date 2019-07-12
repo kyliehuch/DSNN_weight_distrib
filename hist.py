@@ -3,7 +3,7 @@ import os
 import torch
 import numpy as np
 import matplotlib
-matplotlib.use('MacOSX')
+matplotlib.use('pdf')
 import matplotlib.pyplot as plt
 
 state_dict = torch.load("saved_l2.net")
@@ -17,7 +17,9 @@ for i in range(2):
         for wt in state_dict["conv1.weight"][0,i,j,:]:
             c1n0_wts.append(wt.item())
 
-wt_hist = np.histogram(c1n0_wts, bins=10, range=(0.0, 1.0))
-plt.hist(wt_hist)
+
+plt.hist(c1n0_wts, bins=20, range=(0.00, 1.00))
 plt.title("Histogram of single c1 neuron's weight distribution")
+plt.xlabel('weight')
+plt.ylabel('number weights')
 plt.show()
