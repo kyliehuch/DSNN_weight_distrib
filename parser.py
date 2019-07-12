@@ -14,15 +14,10 @@ for i in range(2):
         for wt in state_dict["conv1.weight"][0,i,j,:]:
             c1n0_wts.append(wt.item())
 
-print("number weights, c1n0:", len(c1n0_wts))
-print(c1n0_wts)
-
-arr = np.array(c1n0_wts)
-a = np.hstack((arr.normal(size=50), arr.normal(loc=5, scale=1, size=50)))
-plt.hist(a, bins=10, range=(0.0, 1.0))
+wt_hist = np.histogram(c1n0_wts, bins=10, range=(0.0, 1.0))
+plt.hist(wt_hist)
 plt.title("Histogram of single c1 neuron's weight distribution")
 plt.show()
-
 
 
 '''
