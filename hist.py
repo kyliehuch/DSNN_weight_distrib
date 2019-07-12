@@ -14,7 +14,7 @@ for param_tensor in state_dict:
 c1n0_wts = []
 for i in range(2):
     for j in range(5):
-        for wt in state_dict["conv1.weight"][0,i,j,:]:
+        for wt in state_dict["conv1.weight"][8,i,j,:]:
             c1n0_wts.append(wt.item())
 
 
