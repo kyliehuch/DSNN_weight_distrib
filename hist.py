@@ -3,7 +3,7 @@ import os
 import torch
 import numpy as np
 import matplotlib
-matplotlib.use('GTKAgg')
+matplotlib.use('GTK3Agg')
 import matplotlib.pyplot as plt
 
 state_dict = torch.load("saved_l2.net")
