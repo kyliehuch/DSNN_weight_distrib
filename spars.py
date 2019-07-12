@@ -33,7 +33,7 @@ for nrn in c1wts:
     wt_cnt = 0
     for wt in nrn:
         if wt >= 0.95:
-            wt_cnt ++
+            wt_cnt += 1
     c1_act.append(wt_cnt)
 
 c2_act = []    # number of inputs with weights close to 1 for each neuron
@@ -41,7 +41,7 @@ for nrn in c2wts:
     wt_cnt = 0
     for wt in nrn:
         if wt >= 0.95:
-            wt_cnt ++
+            wt_cnt += 1
     c2_act.append(wt_cnt)
 
 c1_spars = []
