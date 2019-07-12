@@ -13,14 +13,14 @@ state_dict = torch.load("saved_l2.net")
 wts = []
 flag = True
 
-while flag == True:
-    if LAYER == 1:
+while (flag == True):
+    if (LAYER == "1"):
         for i in range(2):
             for j in range(5):
                 for wt in state_dict["conv1.weight"][NRN_INDX,i,j,:]:
                     wts.append(wt.item())
         flag = False
-    elif LAYER == 2:
+    elif (LAYER == "2"):
         for i in range(32):
             for j in range(2):
                 for wt in state_dict["conv2.weight"][NRN_INDX,i,j,:]:
