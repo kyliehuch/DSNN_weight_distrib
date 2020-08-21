@@ -9,4 +9,4 @@ DSNNs Analyzed:
 
 All code for both of the networks analyzed and the SpykeTorch tool are copied directly from the SpykeTorch GitHub repo: https://github.com/miladmozafari/SpykeTorch 
 
-The original files contained in this repo are: extractor.py, hist.py, parser.py, sparse.py, and kherweights.txt - ALL OTHER FILES ARE FROM THE SPYKETORCH REPO, please direct any issues or questions concerning these files to the SpykeTorch repo
+The original files contained in this repo are: extractor.py, hist.py, parser.py, sparse.py, saved_l1.net, saved_l2.net, and kherweights.txt - ALL OTHER FILES ARE FROM THE SPYKETORCH REPO, please direct any issues or questions concerning these files to the SpykeTorch repo
