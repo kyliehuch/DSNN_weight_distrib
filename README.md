@@ -1,5 +1,5 @@
 # DSNN WEIGHT DISTRIBUTION ANALYSIS
-Weight distribution analysis of two deep spiking neural networks built using the SpykeTorch tool.
+Code for the weight distribution analysis of deep spiking neural networks built using the SpykeTorch tool.
 
 DSNNs Analyzed:
 
